@@ -1,0 +1,16 @@
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+
+        n = len(nums)
+        goal = n - 1
+        for i in range(n-2, -1, -1):
+            # logic here is that if the current index + amount more than the goal index
+            if i + nums[i] >= goal:
+                goal = i
+            # then that index becomes the goal
+        if goal == 0:
+            return True
+        return False
+
+
+        
